@@ -27,28 +27,65 @@ const teamTwoInput = document.querySelector('.team2 input')
 teamTwoInput.addEventListener('input', handleChangeTeamTwoName)
 
 //
+let counter = 0
 
 function clickCounter(event) {
-  let counter = 0
-
   const counterClickedOn = event.target
 
-  if (counterClickedOn.classList.contains('add fas fa-2x fa-plus-circle')) {
+  if (counterClickedOn.classList.contains('add')) {
     counter++
   }
-  if (
-    counterClickedOn.classList.contains('subtract fas fa-2x fa-minus-circle')
-  ) {
+
+  const score = document.querySelector('.team1 h3')
+  score.innerText = `${counter}`
+}
+
+const teamOneAddButton = document.querySelector('.team1 .add')
+teamOneAddButton.addEventListener('click', clickCounter)
+
+function clickCounter1Subtract(event) {
+  const counterClickedOn = event.target
+
+  if (counterClickedOn.classList.contains('subtract')) {
     counter--
   }
 
-  const score = document.querySelector('h3')
+  const score = document.querySelector('.team1 h3')
   score.innerText = `${counter}`
 }
-const allScores = document.querySelectorAll('h3')
 
-allScores.forEach(element => element.addEventListener('click', clickCounter))
+const teamOneSubtractButton = document.querySelector('.team1 .subtract')
+teamOneSubtractButton.addEventListener('click', clickCounter1Subtract)
 
+let counter2 = 0
+
+function clickCounter2(event) {
+  const counterClickedOn = event.target
+
+  if (counterClickedOn.classList.contains('add')) {
+    counter2++
+  }
+
+  const score = document.querySelector('.team2 h3')
+  score.innerText = `${counter2}`
+}
+
+const teamTwoAddButton = document.querySelector('.team2 .add')
+teamTwoAddButton.addEventListener('click', clickCounter2)
+
+function clickCounter2Subtract(event) {
+  const counterClickedOn = event.target
+
+  if (counterClickedOn.classList.contains('subtract')) {
+    counter2--
+  }
+
+  const score = document.querySelector('.team2 h3')
+  score.innerText = `${counter2}`
+}
+
+const teamTwoSubtractButton = document.querySelector('.team2 .subtract')
+teamTwoSubtractButton.addEventListener('click', clickCounter2Subtract)
 // }
 
 // document.addEventListener('DOMContentLoaded', main)
