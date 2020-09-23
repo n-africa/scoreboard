@@ -26,13 +26,12 @@ function handleChangeTeamTwoName(event) {
 const teamTwoInput = document.querySelector('.team2 input')
 teamTwoInput.addEventListener('input', handleChangeTeamTwoName)
 
-//
 let counter = 0
 
 function clickCounter(event) {
   const counterClickedOn = event.target
 
-  if (counterClickedOn.classList.contains('add')) {
+  if (counterClickedOn.classList.contains('add') && counter < 21) {
     counter++
   }
 
@@ -46,7 +45,7 @@ teamOneAddButton.addEventListener('click', clickCounter)
 function clickCounter1Subtract(event) {
   const counterClickedOn = event.target
 
-  if (counterClickedOn.classList.contains('subtract')) {
+  if (counterClickedOn.classList.contains('subtract') && counter > 0) {
     counter--
   }
 
@@ -62,7 +61,7 @@ let counter2 = 0
 function clickCounter2(event) {
   const counterClickedOn = event.target
 
-  if (counterClickedOn.classList.contains('add')) {
+  if (counterClickedOn.classList.contains('add') && counter2 < 21) {
     counter2++
   }
 
@@ -76,7 +75,7 @@ teamTwoAddButton.addEventListener('click', clickCounter2)
 function clickCounter2Subtract(event) {
   const counterClickedOn = event.target
 
-  if (counterClickedOn.classList.contains('subtract')) {
+  if (counterClickedOn.classList.contains('subtract') && counter2 > 0) {
     counter2--
   }
 
